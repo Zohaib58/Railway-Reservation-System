@@ -41,3 +41,10 @@ document.querySelectorAll(".table-sortable th").forEach(headerCell => {
 		sortTableByColumn(tableElement, headerIndex, !currentIsAscending);
 	});
 });
+
+function confirmCancel() {
+    if (confirm("Are you sure you want to cancel your booking?")) {
+      // User clicked "Yes", redirect to the cancel ticket page
+      window.location.href = "cancel_ticket.php";
+    }
+  }

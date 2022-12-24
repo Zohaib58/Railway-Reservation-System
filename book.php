@@ -34,7 +34,7 @@
     <input type="radio" name="gender" value="female" id="gender_female">Female<br>
     <input type="radio" name="gender" value="other" id="gender_other">Other<br>
     <label for="category">Category:</label><br>
-    <input type="radio" name="category" value="AC" id="category_AC">AC<br>
+    <input type="radio" name="category" value="ac" id="category_AC">AC<br>
     <input type="radio" name="category" value="general" id="category_general">General<br>
     <label for="address">Address:</label><br>
     <input type="text" name="address" id="address"><br>

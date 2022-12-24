@@ -128,6 +128,15 @@
     <input type="submit" value="Book Ticket">
   </form>
   </section>  
+
+
+
+  <h1>View/Cancel Ticket</h1>
+  <form action="view_ticket.php" method="post">
+    <label for="ticket_id">Ticket ID:</label><br>
+    <input type="text" name="ticket_id" id="ticket_id"><br>
+    <input type="submit" value="View Ticket">
+  </form>
 </body>
 </html>
 

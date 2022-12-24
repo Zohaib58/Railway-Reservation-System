@@ -29,11 +29,12 @@ function bookTicket($trainNumber, $trainDate, $category, $name, $age, $gender, $
     $query = "SELECT * FROM Train_Status WHERE train_number = $trainNumber AND train_date = '$trainDate'";
     $result = mysqli_query($conn, $query);
 
+
     if (mysqli_num_rows($result) > 0) {
         // There is a record for this train, date, and category
         $row = mysqli_fetch_assoc($result);
 
-
+        
         if ($category == 'ac') {
             $booked_seats = $row['booked_ac_seats'];
             $total_seats = $row['total_ac_seats'];
@@ -43,17 +44,30 @@ function bookTicket($trainNumber, $trainDate, $category, $name, $age, $gender, $
         }
 
         // Check if there are any seats available
-        if ($booked_seats < $total_seats + 2) {
+        if (($booked_seats < $total_seats) || ($row['wait_seats'] != 0)) {
             // There are seats available, so we can book a ticket
 
             // Insert the passenger into the database
 
-            if ($booked_seats <= $total_seats) {
+            if ($booked_seats < $total_seats) {
                 $status = 'c';
             } else {
                 $status = 'w';
             }
 
+            // Code for implementing change in train_status 
+            if ($status == 'c') {
+                if ($category == 'ac') {
+                    $query = "UPDATE Train_Status SET booked_ac_seats = booked_ac_seats + 1 WHERE train_number = $trainNumber AND train_date = '$trainDate'";
+                } else {
+                    $query = "UPDATE Train_Status SET booked_general_seats = booked_general_seats + 1 WHERE train_number = $trainNumber AND train_date = '$trainDate'";
+                }
+                $result = mysqli_query($conn, $query);
+            } elseif ($status == 'w') {
+                $query = "UPDATE Train_Status SET wait_seats = wait_seats - 1 WHERE train_number = $trainNumber AND train_date = '$trainDate'";
+                $result = mysqli_query($conn, $query);
+            }
+            
 
             $query = "SELECT MAX(ticket_id) FROM passenger";
 $result = mysqli_query($conn, $query);
