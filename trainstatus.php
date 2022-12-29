@@ -7,7 +7,9 @@
   }
 
   // Select all records from the Train_Status table
-  $sql = "SELECT * FROM train_status";
+  $sql = "SELECT ts.train_number, tl.train_name, ts.train_date, tl.source, tl.destination, (ts.total_ac_seats - ts.booked_ac_seats) aas, 
+  tl.ac_fare, (ts.total_general_seats - ts.booked_general_seats) ags, tl.general_fare, ts.wait_seats FROM train_status ts INNER JOIN 
+  trainlist tl WHERE ts.train_number = tl.train_number;";
   $result = mysqli_query($conn, $sql);
 
   // Loop through the results and display them in the table
@@ -15,14 +17,15 @@
     while($row = mysqli_fetch_assoc($result)) {
       echo "<tr>";
       echo "<td>" . $row["train_number"] . "</td>";
-      //echo "<td>" . $row["train_name"] . "</td>";
-      //echo "<td>" . $row["source"] . "</td>";
-      //echo "<td>" . $row["destination"] . "</td>";
+      echo "<td>" . $row["train_name"] . "</td>";
       echo "<td>" . $row["train_date"] . "</td>";
-      echo "<td>" . $row["total_ac_seats"] . "</td>";
-      echo "<td>" . $row["total_general_seats"] . "</td>";
-      echo "<td>" . $row["booked_ac_seats"] . "</td>";
-      echo "<td>" . $row["booked_general_seats"] . "</td>";
+      echo "<td>" . $row["source"] . "</td>";
+      echo "<td>" . $row["destination"] . "</td>";
+      echo "<td>" . $row["aas"] . "</td>";
+      echo "<td>" . $row["ac_fare"] . "</td>";
+      echo "<td>" . $row["ags"] . "</td>";
+      echo "<td>" . $row["general_fare"] . "</td>";
+      echo "<td>" . $row["wait_seats"] . "</td>";
 //      echo"<td> <a href='book.php'?train_number=" . $row["train_number"] . "&train_date=" . $row["train_date"] . "'>Book</a></td>";
       echo "<form method='post' action='book.php'>";
       echo "<input type='hidden' name='train_number' value='" . $row["train_number"] . "'>";

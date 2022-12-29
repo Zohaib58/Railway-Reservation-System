@@ -1,0 +1,468 @@
+@import 'utilities.css';
+
+/*                                                        HOME PAGE (index.php) STYLING STARTS                                        */
+:root {
+  --primary: #3DCFD3;
+  /* bluish */
+  --dark: #161616;
+  /* black */
+  --pure: #FFFFFF;
+  /* white */
+  --ternary: #898989;
+  /* gray */
+  --light: #F2F2F2;
+  /* whitish */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+header nav {
+  background-color: #006699;
+}
+
+header nav .left a {
+  color: var(--pure);
+  text-decoration: none;
+  margin-left: 35px;
+  margin-right: 35px;
+  text-transform: uppercase;
+  transition: all .3s ease;
+  /* Code below deliberately missed */
+}
+
+header nav .branding {
+  margin-right: 3rem;
+}
+
+
+header nav .left a:hover {
+  color: var(--primary);
+}
+
+/* To move button away from links  */
+header nav .right {
+  margin-left: 10rem;
+
+}
+
+.feature-list, .content-wrap, .irctc-info, .footer-wrap {
+  width: 960px;
+  margin: 0 auto;
+}
+
+.feature-list h2 {
+  font-size: 28px;
+}
+
+.feature-list h3 {
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.feature-list p {
+  color: #858585
+}
+
+.rowBox {
+  margin: 0;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: flex-start;
+}
+
+
+.col-md-12 {
+  width: 100%
+}
+
+.col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7,.col-md-8, .col-md-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px
+}
+
+.col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+  float: left
+}
+
+.col-xs-12 {
+  width: 100%
+}
+
+.feature-container {
+  padding: 0;
+}
+
+.f-icon {
+  position: relative;
+  top: 22px;
+}
+
+@media only screen and (max-width:600px) {
+  .f-icon {
+    padding: 0;
+    position: relative;
+    top: 22px;
+  }
+}
+
+footer {
+  background: var(--dark);
+  text-align: center;
+
+}
+
+.footer-logo {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 175px;
+}
+
+
+.footer-copyright {
+  color: var(--pure);
+
+}
+
+.responsive {
+  width: 100%;
+  height: auto;
+}
+
+
+/*                                                        HOME PAGE (index.php) STYLING ENDS                                       */
+/* =================================================================  ================================================================= ===*/
+
+
+
+
+
+/*                                                        trains-information.php STYLING STARTS                                        */
+section#intro {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+section#intro h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+section#intro p {
+  font-size: 1.2em;
+  line-height: 1.5;
+  color: #666;
+}
+
+section#train-information {
+  overflow-x: auto;
+}
+
+
+section#train-information table {
+  border-collapse: collapse;
+  width: 75%;
+  margin: 20px auto;
+  /* centers the table horizontally */
+}
+
+section#train-information th,
+td {
+  text-align: left;
+  padding: 8px;
+}
+
+section#train-information tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+section#train-information tr:hover {
+  background-color: #f5f5f5;
+  /* light grey color */
+}
+
+section#train-information th {
+  background-color: #006699;
+  /* dark blue color */
+  color: white;
+}
+
+section#train-information td {
+  border-bottom: 1px solid #ddd;
+}
+
+section#train-information .table-container {
+  overflow-x: auto;
+  text-align: center;
+}
+/*                                                        trains-information.php STYLING ENDS                                              */
+/* =================================================================  ================================================================= ===*/
+
+
+
+
+
+/*                                                        trains-status.php STYLING STARTS                                        */
+/* Style the table */
+section#train-status table {
+  width: 70%;
+  border-collapse: collapse;
+  margin: 20px auto;
+  margin-left: 20px;
+  /*text-align: right;*/
+}
+
+
+section#train-status th,
+td {
+  text-align: left;
+  padding: 8px;
+}
+
+section#train-status tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+section#train-status tr:hover {
+  background-color: #f5f5f5;
+  /* light grey color */
+}
+
+section#train-status th {
+  background-color: #006699;
+  /* dark blue color */
+  color: white;
+}
+
+section#train-status td {
+  border-bottom: 1px solid #ddd;
+}
+
+section#train-status .filter button:hover {
+  background-color: #00804d;
+  /* darker blue color */
+}
+
+.table-sortable th {
+  cursor: pointer;
+}
+
+.table-sortable .th-sort-asc::after {
+  content: "\25b4";
+}
+
+.table-sortable .th-sort-desc::after {
+  content: "\25be";
+}
+
+.table-sortable .th-sort-asc::after,
+.table-sortable .th-sort-desc::after {
+  margin-left: 5px;
+}
+
+.table-sortable .th-sort-asc,
+.table-sortable .th-sort-desc {
+  background: rgba(0, 0, 0, 0.577);
+}
+
+
+#train-status form {
+  width: 50%;
+  height: 2%;
+}
+
+
+
+#search-card {
+  width: 20%;
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  float: left;
+}
+
+#search-card input[type="text"],
+#search-card input[type="date"] {
+  width: 100%;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 3px;
+  margin-bottom: 4px;
+  resize: vertical;
+}
+
+#search-card input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 3px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#search-card input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+
+
+/*                                                        trains-status.php STYLING ENDS                                              */
+/* =================================================================  ================================================================= ===*/
+
+
+
+
+/*                                                        book.php STYLING STARTS                                        */
+
+
+#Book {
+  width: 100;
+}
+
+.formMiddle {
+  display: flex;
+  flex-direction: column;
+  vertical-align: middle;
+  width: 35%;
+  margin-top: rem;
+  margin: 0 auto;
+
+}
+.radio-inline {
+  display: inline-block;
+}
+
+.rightField {
+
+  margin-left: 70px;
+
+}
+
+.leftField {
+
+  margin-right: 50px;
+
+}
+
+.rightFieldCat {
+  margin-left: 40px;
+}
+
+.rightFieldGen {
+  margin-left: 52px;
+}
+
+.fieldSizeAddress {
+
+  width: 515px;
+  height: 35px;
+}
+.textfieldBookTNTD input[type="text"] {
+
+  width: 105px;
+  height: 35px;
+
+}
+
+.fieldSize {
+  width: 335px;
+  height: 35px;
+}
+
+
+/*                                                        book.php STYLING ENDS                                              */
+/* =================================================================  ================================================================= ===*/
+
+
+
+/*                                                        view-cancel-tickets.php STYLING STARTS                                        */
+
+#view-cancel-tickets label {
+  margin-top: 20px;
+  font-weight: 300rem;
+  color: var(--pure);
+  font-size: 2rem;
+}
+
+.centerTicketIDForm {
+  margin-top: 200px;
+}
+
+
+/*                                                        view-cancel-tickets.php STYLING ENDS                                              */
+/* =================================================================  ================================================================= ===*/
+
+
+
+
+/*                                                        General STYLING STARTS                                        */
+
+h1 {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  color: var(--pure);
+  /*padding-top:2rem;*/
+  /*margin-bottom:2rem;*/
+  font-size: 2rem;
+  font-weight: 300;
+
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
+body {
+  line-height: 1;
+  font-family: sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+label {
+  margin-top: 20px;
+  color: var(--dark);
+  display: inline-block;
+}
+
+
+input[type="text"],
+input[type="date"] {
+  width: 100%;
+  height: 35px;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0 10px;
+}
+
+input[type="submit"] {
+  width: 100%;
+  height: 40px;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 18px;
+  border: none;
+  border-radius: 4px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+
+
+/*                                                        General STYLING ENDS                                              */
+/* =================================================================  ================================================================= ===*/

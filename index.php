@@ -1,143 +1,144 @@
 <!DOCTYPE html>
+
 <?php
- include_once 'dbconnection.php'
- ?>
+include_once 'dbconnection.php'
+  ?>
 <html>
-  <head>
-    <title>Railway Reservation System</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <header>
-      <nav>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#search-trains">Search Trains</a></li>
-          <li><a href="#book-ticket">Book Ticket</a></li>
-          <li><a href="#cancel-ticket">Cancel Ticket</a></li>
-          <li><a href="#check-status">Check Status</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <section id="intro">
-        <h1>Welcome to the Railway Reservation System</h1>
-        <p>
-          This website allows you to search for trains, book tickets, cancel tickets, and check the status of your booking.
-        </p>
-      </section>
-    </main>
-    <section id="train-information">
-        <table>
-            <thead>
-              <tr>
-                <th>Train Number</th>
-                <th>Train Name</th>
-                <th>Source</th>
-                <th>Destination</th>
-                <th>AC Fare</th>
-                <th>General Fare</th>
-              </tr>
-            </thead>
-            <tbody>
-            <?php
-                // Include the PHP script to retrieve and display the records from the TrainList table
-                include "trainlist.php";
-              ?>
-            </tbody>
-          </table>
-          
-    </section>
 
 
-    <section id="train-status">
-    <header>
-    <h1>Train Status</h1>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <link rel="stylesheet" href="./css/style.css">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:400,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:300;400;700&display=swap" rel="stylesheet">
+
+  <title>Railway Reservation System</title>
+
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="container flex items-center justify-center">
+        <div class="left flex items-center">
+          <!--Logo and links -->
+          <div class="branding">
+            <img src="./images/logo.svg" alt="">
+          </div>
+          <div>
+            <a href="index.php">Home</a>
+            <a href="trains-information.php">Trains Information</a>
+            <a href="view-cancel-tickets.php">View or Cancel Ticket</a>
+          </div>
+        </div>
+        <div class="right">
+          <!--Contact Button -->
+          <a href="trains-status.php"><button class="btn-nb btn-nb-primary">Book Ticket</button></a>
+        </div>
+      </div>
+    </nav>
+    <img src="./images/train.jpg" alt="" id="train" class="responsive">
+
+    
+
+    <div class="feature-list">
+      <div class="row">
+        <div class="col-md-12 col-xs-12" style="margin-top:46px; margin-left: 12px;">
+          <h2>Why Book ZRRS Train Tickets With ZRRS?</h2>
+        </div>
+      </div>
+      <div class="row rowBox">
+        <div class="col-xs-12 col-md-6 feature-container">
+          <div class="col-xs-2 f-icon">
+            <amp-img width="50" height="50" src="https://www.confirmtkt.com/img/home/icons/ic-web-confirm-ticket@3x.png"
+              class="features-img img-responsive" alt="ZRRS train ticket cancallations and refund">
+            </amp-img>
+          </div>
+          <div class="col-xs-10">
+            <h3>Get ZRRS Train Tickets </h3>
+            <p>With our same train alternates and prediction feature,
+              increase your chances of getting confirm ZRRS train tickets. </p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-6 feature-container">
+          <div class="col-xs-2 f-icon">
+            <amp-img width="50" height="50" src="https://www.confirmtkt.com/img/home/icons/ic-web-upi@3x.png"
+              class="features-img img-responsive" alt="ZRRS waitlist tickets prediction and alternative options">
+            </amp-img>
+          </div>
+          <div class="col-xs-10">
+            <h3>UPI Enable Secured Payment </h3>
+            <p>Payment on Confirmtkt is highly secured. Easy UPI and other multiple payment modes available. </p>
+          </div>
+        </div>
+      </div>
+      <div class="row rowBox">
+        <div class="col-xs-12 col-md-6 feature-container">
+          <div class="col-xs-2 f-icon">
+            <amp-img width="50" height="50"
+              src="ticket.png"
+              class="features-img img-responsive" alt="Secure train ticket booking"></amp-img>
+          </div>
+          <div class="col-xs-10">
+            <h3>Free Cancellation on ZRRS Tickets </h3>
+            <p>Get a full refund on ZRRS train tickets by opting our free cancellation feature. </p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-6 feature-container">
+          <div class="col-xs-2 f-icon">
+            <amp-img width="50" height="50" src="https://www.confirmtkt.com/img/home/icons/ic-web-support@3x.png"
+              class="features-img img-responsive" alt="train ticket booking customer support">
+            </amp-img>
+          </div>
+          <div class="col-xs-10">
+            <h3>ZRRS Booking & Enquiry Support </h3>
+            <p>24X7 customer support,
+              for any ZRRS train enquiry & booking related queries call 08068243910. </p>
+          </div>
+        </div>
+      </div>
+      <div class="row rowBox">
+        <div class="col-xs-12 col-md-6 feature-container">
+          <div class="col-xs-2 f-icon">
+            <amp-img width="50" height="50" src="https://www.confirmtkt.com/img/home/icons/ic-web-refund@3x.png"
+              class="features-img img-responsive" alt="Secure train ticket booking"></amp-img>
+          </div>
+          <div class="col-xs-10">
+            <h3>ZRRS Instant Refund & Cancellation </h3>
+            <p>Get an instant refund and book your next ZRRS ticket easily. </p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-6 feature-container">
+          <div class="col-xs-2 f-icon">
+        
+    
+        </div>
+      </div>
+    </div>
+
+
   </header>
-  <main>
-    <table  class = "table-sortable">
-      <thead>
-        <tr>
-          <th>Train Number</th>
-          
-          <th>Train Date</th>
-          <th>Total AC Seats</th>
-          <th>Total General Seats</th>
-          <th>Booked AC Seats</th>
-          <th>Booked General Seats</th>
-          <th>        </th>
-        </tr>
-      </thead>
-      <tbody>
-        <?php
-          // Include the PHP script to retrieve and display the records from the Train_Status table
-          include "trainstatus.php";
-        ?>
-      </tbody>
-      <!-- Add filter inputs for each column -->
-<div class="filter">
-  <label for="train-number-filter">Train Number:</label>
-  <input type="text" id="train-number-filter" onkeyup="filterTable()">
-</div>
-<div class="filter">
-  <label for="train-date-filter">Train Date:</label>
-  <input type="text" id="train-date-filter" onkeyup="filterTable()">
-</div>
-<div class="filter">
-  <label for="total-ac-seats-filter">Total AC Seats:</label>
-  <input type="text" id="total-ac-seats-filter" onkeyup="filterTable()">
-</div>
-<div class="filter">
-  <label for="total-general-seats-filter">Total General Seats:</label>
-  <input type="text" id="total-general-seats-filter" onkeyup="filterTable()">
-</div>
-<div class="filter">
-  <label for="booked-ac-seats-filter">Booked AC Seats:</label>
-  <input type="text" id="booked-ac-seats-filter" onkeyup="filterTable()">
-</div>
-<div class="filter">
-  <label for="booked-general-seats-filter">Booked General Seats:</label>
-  <input type="text" id="booked-general-seats-filter" onkeyup="filterTable()">
-</div>
-
-    </table>
-  </main>
-  <script src="script.js"></script>
-  </section>
-
-
-
-  <section id="Book">
-  <h1>Book Ticket</h1>
-  <form action="book.php" method="post">
-    <label for="name">Name:</label><br>
-    <input type="text" name="name" id="name"><br>
-    <label for="age">Age:</label><br>
-    <input type="date" name="age" id="age"><br>
-    <label for="gender">Gender:</label><br>
-    <input type="radio" name="gender" value="male" id="gender_male">Male<br>
-    <input type="radio" name="gender" value="female" id="gender_female">Female<br>
-    <input type="radio" name="gender" value="other" id="gender_other">Other<br>
-    <label for="category">Category:</label><br>
-    <input type="radio" name="category" value="ac" id="category_AC">AC<br>
-    <input type="radio" name="category" value="general" id="category_general">General<br>
-    <label for="address">Address:</label><br>
-    <input type="text" name="address" id="address"><br>
-    <input type="hidden" name="train_number" value="<?php echo $_POST['train_number']; ?>" readonly>
-    <input type="hidden" name="train_date" value="<?php echo $_POST['train_date']; ?>" readonly>
-    <input type="submit" value="Book Ticket">
-  </form>
-  </section>  
-
-
-
-  <h1>View/Cancel Ticket</h1>
-  <form action="view_ticket.php" method="post">
-    <label for="ticket_id">Ticket ID:</label><br>
-    <input type="text" name="ticket_id" id="ticket_id"><br>
-    <input type="submit" value="View Ticket">
-  </form>
-</body>
-</html>
-
   
+  <footer>
+        <img class = "footer-logo" src="./images/logo.svg" alt="">
+        
+        
+
+        <div class = "footer-copyright">
+            Copyright 2022 © Zohaib's Railway Reservation System. All rights reserved.
+        </div>
+
+
+    </footer>
+</body>
+
+</html>
