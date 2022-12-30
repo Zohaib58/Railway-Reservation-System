@@ -1,7 +1,18 @@
 @import 'utilities.css';
 
 /*                                                        HOME PAGE (index.php) STYLING STARTS                                        */
-
+:root {
+  --primary: #3DCFD3;
+  /* bluish */
+  --dark: #161616;
+  /* black */
+  --pure: #FFFFFF;
+  /* white */
+  --ternary: #898989;
+  /* gray */
+  --light: #F2F2F2;
+  /* whitish */
+}
 
 * {
   margin: 0;
@@ -437,6 +448,23 @@ section#view_ticket.table-container {
   margin:auto;
 
 }
+
+.ticket-container {
+  width: 500px;
+  height: 400px;
+  /*border: 1px solid black;*/
+  margin: 5% auto;
+  /*text-align: center;*/
+  font-family: Arial, sans-serif;
+}
+
+.ticket-header {
+  text-align: center;
+  background-color: #006699;
+  color: white;
+  padding: 5px;
+}
+
 /*                                                        view-cancel-tickets.php STYLING ENDS                                              */
 /* =================================================================  ================================================================= ===*/
 

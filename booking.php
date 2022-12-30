@@ -138,20 +138,26 @@ if (mysqli_num_rows($result) > 0) {
 
             if ($result) {
                 // Ticket was booked successfully
+                echo "successfully";
+                
                 return true;
             } else {
                 // There was an error booking the ticket
+                echo "eror";
                 return "Error booking ticket: " . mysqli_error($conn);
             }
         } else {
             // There are no seats available
+            echo "no seats available";
             return "Sorry, no seats available in the desired category.";
         }
     } else {
         // There is no record for this train, date, and category
+        echo "Invalid train number, date, or category.";
         return "Invalid train number, date, or category.";
     }
 }
 
 
 bookTicket($train_number, $train_date, $category, $name, $age, $gender, $address);
+?>

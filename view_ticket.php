@@ -71,36 +71,46 @@ if (isset($_POST['ticket_id'])) {
     </nav>
   </header>
   <main>
-    <div class="container">
-      <!-- Display the passenger information in a table -->
-      <table>
-        <thead>
-          <tr>
-            <th>Ticket ID</th>
-            <th>Train Number</th>
-            <th>Train Date</th>
-            <th>Name</th>
-            <th>Age</th>
-            <th>Gender</th>
-            <th>Address</th>
-            <th>Status</th>
-            <th>Category</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><?php echo $row['ticket_id']; ?></td>
-            <td><?php echo $row['train_number']; ?></td>
-            <td><?php echo $row['booked_date']; ?></td>
-            <td><?php echo $row['name']; ?></td>
-            <td><?php echo $row['age']; ?></td>
-            <td><?php echo $row['sex']; ?></td>
-            <td><?php echo $row['address']; ?></td>
-            <td><?php echo $row['status']; ?></td>
-            <td><?php echo $row['category']; ?></td>
-          </tr>
-        </tbody>
-      </table>
+  <div class="ticket-container">
+  <div class="ticket-header">
+    <h4>Ticket</h4>
+  </div>
+  <div class="ticket-body">
+    <div class="ticket-info">
+      <h5>Ticket ID: <?php echo $row['ticket_id']; ?></h5>
+      <p id="ticket-id"></p>
+      <h5>Train Number: <?php echo $row['train_number']; ?> </h5>
+      <p id="train-number"></p>
+      <h5>Booking Date: <?php echo $row['booked_date']; ?></h5>
+      <p id="train-date"></p>
+      <h5>Name: <?php echo $row['name']; ?></h5>
+      <p id="name"></p>
+      <h5>Age: <?php echo $row['age']; ?></h5>
+      <p id="age"></p>
+      <h5>Gender: <?php   if ($row['sex'] == 'o') {
+        echo 'Others';
+      } elseif ($row['sex'] == 'f') {
+        echo 'Female';
+      } elseif ($row['sex'] == 'm') {
+        echo 'Male';
+      } ?></h5>
+      <p id="gender"></p>
+      <h5>Address: <?php echo $row['address']; ?></h5>
+      <p id="address"></p>
+      <h5>Status: <?php if ($row['status'] == 'c') {
+        echo 'Confirmed';
+      } elseif ($row['status'] == 'w') {
+        echo 'Wait List';
+      } ?></h5>
+      <p id="status"></p>
+      <h5>Category: <?php  echo $row['category'] == 'general' ? 'General' : 'AC'; ?></h5>
+      <p id="category"></p>
+    </div>
+  </div>
+
+</div>
+
+
       <!-- Create a form to pass the ticket_id to the cancel_ticket page -->
       <form method="post" action="cancel_ticket.php">
         <input type="hidden" name="ticket_id" value="<?php echo $ticket_id; ?>">
