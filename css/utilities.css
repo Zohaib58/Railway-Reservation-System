@@ -1,3 +1,15 @@
+:root {
+    --primary: #3DCFD3;
+    /* bluish */
+    --dark: #161616;
+    /* black */
+    --pure: #FFFFFF;
+    /* white */
+    --ternary: #898989;
+    /* gray */
+    --light: #F2F2F2;
+    /* whitish */
+  }
 .flex{
     display: flex;
 }

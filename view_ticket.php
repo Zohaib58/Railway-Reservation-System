@@ -21,7 +21,9 @@ if (isset($_POST['ticket_id'])) {
         // There is a record for this ticket_id
         $row = mysqli_fetch_assoc($result);
     } else {
-        header("Location:error.html");
+
+        header("Location:invalid-ticketid.html");
+        
 
     }
 }
@@ -29,6 +31,7 @@ if (isset($_POST['ticket_id'])) {
 ?>
 <!DOCTYPE html>
 <html>
+<section id = "view_ticket">
 <head>
   <title>View Ticket</title>
   <meta charset="UTF-8">
@@ -101,13 +104,12 @@ if (isset($_POST['ticket_id'])) {
       <!-- Create a form to pass the ticket_id to the cancel_ticket page -->
       <form method="post" action="cancel_ticket.php">
         <input type="hidden" name="ticket_id" value="<?php echo $ticket_id; ?>">
-        <input type="submit" value="Cancel Ticket" onclick="return confirm('Are you sure you want to cancel your booking?')">
+        <div class = "cancelbtn phpButtons ">
+            <input type="submit" value="Cancel Ticket" onclick="return confirm('Are you sure you want to cancel your booking?')">
+        </div>
       </form>
     </div>
   </main>
-  <footer>
-    <!-- Add your footer content here -->
-  </footer>
 </body>
 </html>
 

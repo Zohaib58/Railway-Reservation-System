@@ -11,8 +11,15 @@ if (isset($_POST['train_number'])) {
 if (isset($_POST['train_date'])) {
   $_SESSION['train_date'] = $_POST['train_date'];
 }
-?>
 
+
+$sysDate = date('Y-m-d');
+
+$dateDifference = (strtotime($_SESSION['train_date']) - strtotime($sysDate)) / (60 * 60 * 24);
+if ($dateDifference > 7) {
+  header("Location:more7daysbook.html");
+}
+?>
 <html>
 <section id="Book">
 
