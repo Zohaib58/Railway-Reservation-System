@@ -138,17 +138,66 @@ if (mysqli_num_rows($result) > 0) {
 
             if ($result) {
                 // Ticket was booked successfully
-                echo "successfully";
+                ?>
+                <html>
+                <div class="ticket-container">
+  <div class="ticket-header">
+    <h4>Booking Completed</h4>
+  </div>
+  <div class="ticket-body">
+    <div class="ticket-info">
+      <h5>Ticket ID: <?php echo $ticket_id; ?></h5>
+      <p id="ticket-id"></p>
+      <h5>Train Number: <?php echo $trainNumber; ?> </h5>
+      <p id="train-number"></p>
+      <h5>Booking Date: <?php echo $trainDate; ?></h5>
+      <p id="train-date"></p>
+      <h5>Name: <?php echo $name; ?></h5>
+      <p id="name"></p>
+      <h5>Age: <?php echo $age; ?></h5>
+      <p id="age"></p>
+      <h5>Gender: <?php   if ($gender == 'other') {
+        echo 'Other';
+      } elseif ($gender == 'female') {
+        echo 'Female';
+      } elseif ($gender == 'male') {
+        echo 'Male';
+      } ?></h5>
+      <p id="gender"></p>
+      <h5>Address: <?php echo $address ?></h5>
+      <p id="address"></p>
+      <h5>Status: <?php if ($status == 'c') {
+        echo 'Confirmed';
+      } elseif ($status == 'w') {
+        echo 'Wait List';
+      } ?></h5>
+      <p id="status"></p>
+      <h5>Category: <?php  echo $category == 'general' ? 'General' : 'AC'; ?></h5>
+      <p id="category"></p>
+    </div>
+  </div>
+
+</div>
+
+                </html>
+                <?php
+                
                 
                 return true;
             } else {
                 // There was an error booking the ticket
-                echo "eror";
+                echo "Error booking ticket: " . mysqli_error($conn);
                 return "Error booking ticket: " . mysqli_error($conn);
             }
         } else {
             // There are no seats available
-            echo "no seats available";
+            ?>
+                <html>
+                <div class="error-message">No Seats Available in this Category at the moment.</div>
+                <div class="sad-emoji">🙁</div>
+                </html>
+                <?php
+            
             return "Sorry, no seats available in the desired category.";
         }
     } else {
