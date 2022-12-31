@@ -20,6 +20,7 @@ include_once 'dbconnection.php';
       echo "<td>" . $row["destination"] . "</td>";
       echo "<td>" . $row["ac_fare"] . "</td>";
       echo "<td>" . $row["general_fare"] . "</td>";
+      echo "<td>" . $row["available_weekdays"] . "</td>";
       echo "</tr>";
     }
   } else {

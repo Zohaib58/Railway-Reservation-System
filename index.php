@@ -35,7 +35,7 @@ include_once 'dbconnection.php'
             <img src="./images/logo.svg" alt="">
           </div>
           <div>
-            <a href="index.php">Home</a>
+            
             <a href="trains-information.php">Trains Information</a>
             <a href="view-cancel-tickets.php">View or Cancel Ticket</a>
           </div>
@@ -48,7 +48,13 @@ include_once 'dbconnection.php'
     </nav>
     <img src="./images/train.jpg" alt="" id="train" class="responsive">
 
-    
+    <section id="intro">
+      <h1>Welcome to the Railway Reservation System</h1>
+      <p>
+        This website allows you to search for trains, book tickets, cancel tickets, and check the status of your
+        booking.
+      </p>
+    </section>
 
     <div class="feature-list">
       <div class="row">
@@ -102,7 +108,7 @@ include_once 'dbconnection.php'
           <div class="col-xs-10">
             <h3>ZRRS Booking & Enquiry Support </h3>
             <p>24X7 customer support,
-              for any ZRRS train enquiry & booking related queries call 08068243910. </p>
+              for any ZRRS train enquiry & booking related queries call XXXXXXXX. </p>
           </div>
         </div>
       </div>

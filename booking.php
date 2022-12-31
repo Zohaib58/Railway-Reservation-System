@@ -9,8 +9,7 @@
 
   <link rel="stylesheet" href="./css/style.css">
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  
 
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:400,600&display=swap" rel="stylesheet">
@@ -146,33 +145,33 @@ if (mysqli_num_rows($result) > 0) {
   </div>
   <div class="ticket-body">
     <div class="ticket-info">
-      <h5>Ticket ID: <?php echo $ticket_id; ?></h5>
+      Ticket ID: <?php echo $ticket_id; ?>
       <p id="ticket-id"></p>
-      <h5>Train Number: <?php echo $trainNumber; ?> </h5>
+      Train Number: <?php echo $trainNumber; ?>
       <p id="train-number"></p>
-      <h5>Booking Date: <?php echo $trainDate; ?></h5>
+      Booking Date: <?php echo $trainDate; ?>
       <p id="train-date"></p>
-      <h5>Name: <?php echo $name; ?></h5>
+      Name: <?php echo $name; ?>
       <p id="name"></p>
-      <h5>Age: <?php echo $age; ?></h5>
+      Age: <?php echo $age; ?>
       <p id="age"></p>
-      <h5>Gender: <?php   if ($gender == 'other') {
+      Gender: <?php   if ($gender == 'other') {
         echo 'Other';
       } elseif ($gender == 'female') {
         echo 'Female';
       } elseif ($gender == 'male') {
         echo 'Male';
-      } ?></h5>
+      } ?>
       <p id="gender"></p>
-      <h5>Address: <?php echo $address ?></h5>
+      Address: <?php echo $address ?>
       <p id="address"></p>
-      <h5>Status: <?php if ($status == 'c') {
+      Status: <?php if ($status == 'c') {
         echo 'Confirmed';
       } elseif ($status == 'w') {
         echo 'Wait List';
-      } ?></h5>
+      } ?>
       <p id="status"></p>
-      <h5>Category: <?php  echo $category == 'general' ? 'General' : 'AC'; ?></h5>
+      Category: <?php  echo $category == 'general' ? 'General' : 'AC'; ?>
       <p id="category"></p>
     </div>
   </div>

@@ -41,8 +41,7 @@ if (isset($_POST['ticket_id'])) {
 
   <link rel="stylesheet" href="./css/style.css">
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  
 
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:400,600&display=swap" rel="stylesheet">
@@ -77,33 +76,33 @@ if (isset($_POST['ticket_id'])) {
   </div>
   <div class="ticket-body">
     <div class="ticket-info">
-      <h5>Ticket ID: <?php echo $row['ticket_id']; ?></h5>
+      Ticket ID: <?php echo $row['ticket_id']; ?>
       <p id="ticket-id"></p>
-      <h5>Train Number: <?php echo $row['train_number']; ?> </h5>
+      Train Number: <?php echo $row['train_number']; ?> 
       <p id="train-number"></p>
-      <h5>Booking Date: <?php echo $row['booked_date']; ?></h5>
+      Booking Date: <?php echo $row['booked_date']; ?>
       <p id="train-date"></p>
-      <h5>Name: <?php echo $row['name']; ?></h5>
+      Name: <?php echo $row['name']; ?>
       <p id="name"></p>
-      <h5>Age: <?php echo $row['age']; ?></h5>
+      Age: <?php echo $row['age']; ?>
       <p id="age"></p>
-      <h5>Gender: <?php   if ($row['sex'] == 'o') {
+      Gender: <?php   if ($row['sex'] == 'o') {
         echo 'Others';
       } elseif ($row['sex'] == 'f') {
         echo 'Female';
       } elseif ($row['sex'] == 'm') {
         echo 'Male';
-      } ?></h5>
+      } ?>
       <p id="gender"></p>
-      <h5>Address: <?php echo $row['address']; ?></h5>
+      Address: <?php echo $row['address']; ?>
       <p id="address"></p>
-      <h5>Status: <?php if ($row['status'] == 'c') {
+      Status: <?php if ($row['status'] == 'c') {
         echo 'Confirmed';
       } elseif ($row['status'] == 'w') {
         echo 'Wait List';
-      } ?></h5>
+      } ?>
       <p id="status"></p>
-      <h5>Category: <?php  echo $row['category'] == 'general' ? 'General' : 'AC'; ?></h5>
+      Category: <?php  echo $row['category'] == 'general' ? 'General' : 'AC'; ?>
       <p id="category"></p>
     </div>
   </div>

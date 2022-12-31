@@ -34,7 +34,7 @@
       echo "<td><button type='submit' style='width:80px; height:30px; align-self:center;  background-color: #4CAF50;
       color: white;
       font-size:1.2rem;
-      
+      margin-left: -25%;
       border: none;
   
       cursor: pointer;'>Book</button></td>";

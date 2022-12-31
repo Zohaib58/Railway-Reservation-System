@@ -60,6 +60,7 @@
           <th>Destination</th>
           <th>AC Fare</th>
           <th>General Fare</th>
+          <th>Available Weekdays</th>
         </tr>
       </thead>
       <tbody>
@@ -69,4 +70,52 @@
         ?>
       </tbody>
     </table>
+    <style>
+     section {
+      
+  
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+h3{
+  margin-top: 5%;
+  margin-bottom: 1.2%;
+}
+h3, h5 {
+ 
+  
+  margin-left: 12.5%;
+}
+
+ol {
+  list-style-type: decimal;
+  
+  margin: 20px 0;
+  padding: 0 20px;
+  
+}
+
+li {
+ 
+  margin: 10px 0;
+  margin-left: 13%;
+}
+
+      </style>
+    <section>
+        <h3>How to book Ticket on ZRRS?</h3>
+        <h5>Steps to book train tickets online on ZRRS</h5>
+        <ol>
+          <li>Click on Book Ticket in the nav bar</li>
+          <li>A table with information about trains availability would be visible. Search Card can be used to filter the rows</li>
+          <li>Click on the Book button against row you want. Train Number and Date would be copied to the next page's booking form </li>
+          <li>Enter personal details and select the Train Category</li>
+          <li>After entering details click on the Book Ticket button </li>
+          <li>Your ticket would be displayed if the booking is completed, otherwise message would be displayed of seat's non availability</li>
+        </ol>
+        <p style = "margin-left:13%;">ZRRS Train ticket Booking Video Tutorial - <a href='https://youtu.be/O2rObpPNAjY' rel="noopener"
+            target='_blank'>ZRRS Train Ticket Booking</a></p>
+      </section>
+
 </html>
