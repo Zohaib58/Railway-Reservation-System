@@ -150,7 +150,7 @@ section#intro {
 }
 
 section#intro h1 {
-  margin-top: 20px;
+  margin-top: 3%;
   font-size: 2em;
   margin-bottom: 15px;
   color: var(--dark);
@@ -170,7 +170,7 @@ section#train-information {
 section#train-information table {
   border-collapse: collapse;
   width: 75%;
-  margin: 20px auto;
+  margin: 5% auto;
   /* centers the table horizontally */
 }
 

@@ -58,7 +58,8 @@ if (isset($_POST['name']) && $_POST['age'] && $_POST['gender'] && $_POST['catego
     // Get the values from the form fields
     $name = $_POST['name'];
     $age = $_POST['age'];
-    $gender = $_POST['gender'];
+    $gender = substr($_POST['gender'], 0, 1);
+    
     $category = $_POST['category'];
     $address = $_POST['address'];
     $train_number = $_POST['train_number'];
@@ -76,7 +77,7 @@ function bookTicket($trainNumber, $trainDate, $category, $name, $age, $gender, $
     global $conn;
 
     // Retrieve the train status record from the database
-    $query = "SELECT * FROM Train_Status WHERE train_number = $trainNumber AND train_date = '$trainDate'";
+    $query = "SELECT * FROM train_status WHERE train_number = $trainNumber AND train_date = '$trainDate'";
     $result = mysqli_query($conn, $query);
 
 
@@ -108,13 +109,13 @@ function bookTicket($trainNumber, $trainDate, $category, $name, $age, $gender, $
             // Code for implementing change in train_status 
             if ($status == 'c') {
                 if ($category == 'ac') {
-                    $query = "UPDATE Train_Status SET booked_ac_seats = booked_ac_seats + 1 WHERE train_number = $trainNumber AND train_date = '$trainDate'";
+                    $query = "UPDATE train_status SET booked_ac_seats = booked_ac_seats + 1 WHERE train_number = $trainNumber AND train_date = '$trainDate'";
                 } else {
-                    $query = "UPDATE Train_Status SET booked_general_seats = booked_general_seats + 1 WHERE train_number = $trainNumber AND train_date = '$trainDate'";
+                    $query = "UPDATE train_status SET booked_general_seats = booked_general_seats + 1 WHERE train_number = $trainNumber AND train_date = '$trainDate'";
                 }
                 $result = mysqli_query($conn, $query);
             } elseif ($status == 'w') {
-                $query = "UPDATE Train_Status SET wait_seats = wait_seats - 1 WHERE train_number = $trainNumber AND train_date = '$trainDate'";
+                $query = "UPDATE train_status SET wait_seats = wait_seats - 1 WHERE train_number = $trainNumber AND train_date = '$trainDate'";
                 $result = mysqli_query($conn, $query);
             }
             
@@ -132,7 +133,7 @@ if (mysqli_num_rows($result) > 0) {
     $ticket_id = 1;
 }
             
-            $query = "INSERT INTO Passenger VALUES ($ticket_id, $trainNumber, '$trainDate', '$name', $age, '$gender','$address', '$status', '$category')";
+            $query = "INSERT INTO passenger VALUES ($ticket_id, $trainNumber, '$trainDate', '$name', $age, '$gender','$address', '$status', '$category')";
             $result = mysqli_query($conn, $query);
 
             if ($result) {
@@ -155,11 +156,11 @@ if (mysqli_num_rows($result) > 0) {
       <p id="name"></p>
       Age: <?php echo $age; ?>
       <p id="age"></p>
-      Gender: <?php   if ($gender == 'other') {
+      Gender: <?php   if ($gender == 'O') {
         echo 'Other';
-      } elseif ($gender == 'female') {
+      } elseif ($gender == 'F') {
         echo 'Female';
-      } elseif ($gender == 'male') {
+      } elseif ($gender == 'M') {
         echo 'Male';
       } ?>
       <p id="gender"></p>

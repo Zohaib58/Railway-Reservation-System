@@ -10,7 +10,7 @@
   // Select all records from the Train_Status table
   $sql = "SELECT ts.train_number, tl.train_name, ts.train_date, tl.source, tl.destination, (ts.total_ac_seats - ts.booked_ac_seats) aas, 
   tl.ac_fare, (ts.total_general_seats - ts.booked_general_seats) ags, tl.general_fare, ts.wait_seats FROM train_status ts INNER JOIN 
-  trainlist tl WHERE ts.train_number = tl.train_number;";
+  trainlist tl WHERE ts.train_number = tl.train_number ORDER BY ts.train_date;";
   $result = mysqli_query($conn, $sql);
 
   // Loop through the results and display them in the table

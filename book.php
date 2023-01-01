@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-session_start();
+
 
 
 
@@ -17,7 +17,7 @@ $sysDate = date('Y-m-d');
 
 $dateDifference = (strtotime($_SESSION['train_date']) - strtotime($sysDate)) / (60 * 60 * 24);
 if ($dateDifference > 7) {
-  header("Location:more7daysbook.html");
+  echo "<script>window.open('more7daysbook.html','_self')</script>";
 }
 ?>
 <html>

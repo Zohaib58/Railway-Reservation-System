@@ -7,7 +7,7 @@ include_once 'dbconnection.php';
   }
 
   // Select all records from the TrainList table
-  $sql = "SELECT * FROM TrainList";
+  $sql = "SELECT * FROM trainlist";
   $result = mysqli_query($conn, $sql);
 
   // Loop through the results and display them in the table
